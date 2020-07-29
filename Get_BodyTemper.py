@@ -28,19 +28,19 @@ class sub_frameB(tkinter.Frame):
             else:
                 pass
 
-        dot_button = tkinter.Button(frame,text=str("."), command=self.add_text("."))
+        dot_button = tkinter.Button(frame, text=str("."), command=self.add_text("."))
         dot_button.grid(row=3, column=1)
 
         frame.place(x=0, y=0)
 
 
-        text_label=tkinter.Label(label_frame,textvariable=self.text_num)
+        text_label = tkinter.Label(label_frame, textvariable=self.text_num)
         text_label.pack()#.grid(row=4,column=1,columnspan=20)
 
-        save_button=tkinter.Button(label_frame, text=str("SEND"), command=self.add_text("SEND"))
+        save_button = tkinter.Button(label_frame, text=str("SEND"), command=self.add_text("SEND"))
         save_button.pack()#.grid(row=3,column=3)
 
-        clear_button=tkinter.Button(label_frame, text=str("CLEAR"))
+        clear_button = tkinter.Button(label_frame, text=str("CLEAR"))
         clear_button.pack()#.grid(row=3,column=2)
 
 
@@ -70,16 +70,16 @@ def main():
     root_screen.geometry("{0}x{1}".format(WIDTH, HEIGHT))
     root_screen.title('Temperature')
 
-    main_screen=ttk.Frame(root_screen)
+    main_screen = ttk.Frame(root_screen)
     main_screen.grid(column=0, row=0, sticky=(tkinter.N, tkinter.W, tkinter.E, tkinter.S))
 
-    tenkey_screen=sub_frameB(main_screen)
+    tenkey_screen = sub_frameB(main_screen)
     tenkey_screen.grid(column=1, row=0)
 
-    bodytm_screen=sub_frameA(main_screen)
+    bodytm_screen = sub_frameA(main_screen)
     bodytm_screen.grid(column=0, row=0)
 
-    saving_screen=sub_frameC(main_screen)
+    saving_screen = sub_frameC(main_screen)
     saving_screen.grid(column=1, row=1)
 
     for child in main_screen.winfo_children():
